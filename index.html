@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Calcular Freela</title>
+</head>
+<body>
+    <header>
+        <h1>Calcular Freela</h1>
+    </header>
+    <main>
+        <form method="post">
+            <div id="divHorasTrabalhadas">
+                <label for="horasTrabalhadas">Horas Trabalhadas</label>
+            <input type="number" name="horasTrabalhadas" id="horasTrabalhadas" placeholder="0" maxlength="20">
+            </div>
+            <div id="divDiasTrabalhadas">
+                <label for="diasTrabalhados">Dias Trabalhados</label>
+            <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
+            </div>
+            <div id="divSalarioBase">
+                <label for="salarioBase">Salário Base</label>
+            <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
+            </div>
+            <div id="resultado">
+                
+            </div>
+            <!-- <button id="enviarDadosFreela" type="submit">Calcular Valor Hora</button> -->
+        </form>
+        <div id="custosDoProjeto">
+            <form>
+                <div id="divDominio">
+                    <label for="dominio">Domínio</label>
+                    <input type="text" name="dominio" id="dominio" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divHospedagemApp">
+                    <label for="hospedagemApp">Hospedagem da Aplicação</label>
+                    <input type="text" name="hospedagemApp" id="hospedagemApp" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divConstrucaoProjeto">
+                    <label for="construcaoProjeto">Valor da Construção do Projeto</label>
+                    <input type="text" name="construcaoProjeto" id="construcaoProjeto" placeholder="0,00" maxlength="20" readonly>
+                </div>
+                <div id="divCertificadoDigital">
+                    <label for="certificadoDigital">Certificado Digital</label>
+                    <input type="text" name="certificadoDigital" id="certificadoDigital" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divServidorCache">
+                    <label for="servidorCache">Servidor de Cache</label>
+                    <input type="text" name="servidorCache" id="servidorCache" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divHospedagemDatabase">
+                    <label for="hospedagemDatabase">Hospedagem de Banco de Dados</label>
+                    <input type="text" name="hospedagemDatabase" id="hospedagemDatabase" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divDesignProjeto">
+                    <label for="designProjeto">Design do Projeto</label>
+                    <input type="text" name="designProjeto" id="designProjeto" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divServidorEmail">
+                    <label for="servidorEmail">Servidor de E-mail</label>
+                    <input type="text" name="servidorEmail" id="servidorEmail" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divSuporte">
+                    <label for="suporte">Suporte</label>
+                    <input type="text" name="suporte" id="suporte" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divAtualizacoesApp">
+                    <label for="atualizacoesApp">Atualizações na Aplicação</label>
+                    <input type="text" name="atualizacoesApp" id="atualizacoesApp" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="resultadoProjeto">
+                
+                </div>
+                <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button>
+            </form>
+        </div>
+    </main>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./utils.js"></script>
+</body>
+</html>
