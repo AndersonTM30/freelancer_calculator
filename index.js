@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let dominio = document.querySelector('#dominio');
     let hospedagemApp = document.querySelector('#hospedagemApp');
-    let construcaoProjeto = document.querySelector('#construcaoProjeto');
+    // let construcaoProjeto = document.querySelector('#construcaoProjeto');
     let certificadoDigital = document.querySelector('#certificadoDigital');
     let servidorCache = document.querySelector('#servidorCache');
     let hospedagemDatabase = document.querySelector('#hospedagemDatabase');
@@ -16,11 +16,22 @@ document.addEventListener('DOMContentLoaded', function () {
     let suporte = document.querySelector('#suporte');
     let atualizacoesApp = document.querySelector('#atualizacoesApp');
 
+    diasTrabalhados.value = 0;
+
+    horasTrabalhadas.addEventListener('input', function() {
+        calcularValorProjeto()
+    });
+
+    diasTrabalhados.addEventListener('input', function() {
+        calcularValorProjeto()
+    });
+
     let inputId = [
         'salarioBase'
+        , 'horasTrabalhadas'
         , 'dominio'
         , 'hospedagemApp'
-        , 'construcaoProjeto'
+        // , 'construcaoProjeto'
         , 'certificadoDigital'
         , 'servidorCache'
         , 'hospedagemDatabase'
@@ -33,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('#' + inputId.join(', #')).forEach(input => {
         input.value = '0,00';
         moneyMask(input);
+        input.addEventListener('input', function() {
+            calcularValorProjeto();
+        })
     })
 
     function stringParaFloat(param) {
@@ -55,10 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
         valorSalarioBase = validaTipoNumero(valorSalarioBase);
 
         somaValorHora = valorSalarioBase / (valorHorasTrabalhadas * valorDiasTrabalhados);
-        
-        document.querySelector('#resultado').innerHTML = `
-            <p>Valor Hora: ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-        `;
+        if(somaValorHora > 0) {
+            document.querySelector('#resultado').innerHTML = `
+                <p>Valor Hora: ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+            `;
+        }
 
     }
 
@@ -67,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         let valorDominio = stringParaFloat(dominio.value);
         let valoHospedagemApp = stringParaFloat(hospedagemApp.value);
-        let valoConstrucaoProjeto = stringParaFloat(construcaoProjeto.value);
+        // let valoConstrucaoProjeto = stringParaFloat(construcaoProjeto.value);
         let valoCertificadoDigital = stringParaFloat(certificadoDigital.value);
         let valoServidorCache = stringParaFloat(servidorCache.value);
         let valoHospedagemDatabase = stringParaFloat(hospedagemDatabase.value);
@@ -81,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         valorDominio = validaTipoNumero(valorDominio);
         valoHospedagemApp = validaTipoNumero(valoHospedagemApp);
-        valoConstrucaoProjeto = validaTipoNumero(valoConstrucaoProjeto);
+        // valoConstrucaoProjeto = validaTipoNumero(valoConstrucaoProjeto);
         valoCertificadoDigital = validaTipoNumero(valoCertificadoDigital);
         valoServidorCache = validaTipoNumero(valoServidorCache);
         valoHospedagemDatabase = validaTipoNumero(valoHospedagemDatabase);
@@ -94,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let valorTotalProjeto = (somaValorHora * valorHorasTrabalhadas) * valorDiasTrabalhados;
 
-        construcaoProjeto.value = valorTotalProjeto.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2});
+        // construcaoProjeto.value = valorTotalProjeto.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2});
 
         let result =    valorDominio
                         + valoHospedagemApp
@@ -107,9 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         + valoSuporte
                         + valoAtualizacoesApp
                         + valorTotalProjeto;
-        document.querySelector('#resultadoProjeto').innerHTML = `
-            <p>Valor do Projeto: ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-        `;
+        if(result > 0) {
+            document.querySelector('#resultadoProjeto').innerHTML = `
+                <p>Valor do Projeto: ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+            `;
+        }
 
     }
 
@@ -117,9 +134,9 @@ document.addEventListener('DOMContentLoaded', function () {
     //     event.preventDefault();
     //     calcularValorHora();
     // })
-    document.querySelector('#calularValorProjeto').addEventListener('click', function(event) {
-        event.preventDefault();
-        calcularValorProjeto();
-    })
+    // document.querySelector('#calularValorProjeto').addEventListener('click', function(event) {
+    //     event.preventDefault();
+    //     calcularValorProjeto();
+    // })
 
 })
