@@ -11,24 +11,23 @@
         <h1>Calcular Freela</h1>
     </header>
     <main>
-        <form method="post">
-            <div id="divHorasTrabalhadas">
-                <label for="horasTrabalhadas">Horas Trabalhadas</label>
-            <input type="number" name="horasTrabalhadas" id="horasTrabalhadas" placeholder="0" maxlength="20">
-            </div>
-            <div id="divDiasTrabalhadas">
-                <label for="diasTrabalhados">Dias Trabalhados</label>
-            <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
-            </div>
-            <div id="divSalarioBase">
-                <label for="salarioBase">Salário Base</label>
-            <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
-            </div>
-            <div id="resultado">
-                
-            </div>
-            <!-- <button id="enviarDadosFreela" type="submit">Calcular Valor Hora</button> -->
-        </form>
+        <div id="valorHora">
+            <form method="post">
+                <div id="divHorasTrabalhadas">
+                    <label for="horasTrabalhadas">Horas Trabalhadas</label>
+                    <input type="text" name="horasTrabalhadas" id="horasTrabalhadas" placeholder="0" maxlength="20">
+                </div>
+                <div id="divDiasTrabalhadas">
+                    <label for="diasTrabalhados">Dias Trabalhados</label>
+                    <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
+                </div>
+                <div id="divSalarioBase">
+                    <label for="salarioBase">Salário Base</label>
+                    <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
+                </div>
+                <!-- <button id="enviarDadosFreela" type="submit">Calcular Valor Hora</button> -->
+            </form>
+        </div>
         <div id="custosDoProjeto">
             <form>
                 <div id="divDominio">
@@ -36,13 +35,13 @@
                     <input type="text" name="dominio" id="dominio" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divHospedagemApp">
-                    <label for="hospedagemApp">Hospedagem da Aplicação</label>
+                    <label for="hospedagemApp">Hospedagem App</label>
                     <input type="text" name="hospedagemApp" id="hospedagemApp" placeholder="0,00" maxlength="20">
                 </div>
-                <div id="divConstrucaoProjeto">
+                <!-- <div id="divConstrucaoProjeto">
                     <label for="construcaoProjeto">Valor da Construção do Projeto</label>
                     <input type="text" name="construcaoProjeto" id="construcaoProjeto" placeholder="0,00" maxlength="20" readonly>
-                </div>
+                </div> -->
                 <div id="divCertificadoDigital">
                     <label for="certificadoDigital">Certificado Digital</label>
                     <input type="text" name="certificadoDigital" id="certificadoDigital" placeholder="0,00" maxlength="20">
@@ -52,7 +51,7 @@
                     <input type="text" name="servidorCache" id="servidorCache" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divHospedagemDatabase">
-                    <label for="hospedagemDatabase">Hospedagem de Banco de Dados</label>
+                    <label for="hospedagemDatabase">Banco de Dados</label>
                     <input type="text" name="hospedagemDatabase" id="hospedagemDatabase" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divDesignProjeto">
@@ -71,10 +70,14 @@
                     <label for="atualizacoesApp">Atualizações na Aplicação</label>
                     <input type="text" name="atualizacoesApp" id="atualizacoesApp" placeholder="0,00" maxlength="20">
                 </div>
+                <div id="resultado">
+                    
+                </div>
                 <div id="resultadoProjeto">
                 
                 </div>
-                <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button>
+
+                <!-- <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button> -->
             </form>
         </div>
     </main>

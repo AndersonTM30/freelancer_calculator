@@ -1,9 +1,231 @@
-﻿
-main input, button {
-    border-radius: 6px;
-    border: 1px solid;
+﻿/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#construcaoProjeto {
-    background-color: rgb(221, 218, 218);
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+/* fim reset */
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 10px;
+}
+/* fim scroll bar */
+
+header {
+    text-align: center;
+}
+
+main input, button {
+    border-radius: .6rem;
+    border: 1px solid blue;
+}
+
+main label {
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 767rem;
+    background-color: gainsboro;
+    /* overflow: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: .6rem;
+}
+
+main input {
+    padding-left: .8rem;
+    margin: .4rem .4rem .4rem 0;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: green;
+}
+
+#valorHora {
+    height: 130px;
+    max-width: 320px;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+#valorHora form {
+    padding: 8px;
+    display: grid;
+    grid-template-areas: 'leftHeader rightHeader'
+                          'main main';
+    width: 300px;
+}
+
+#divHorasTrabalhadas {
+    display: flex;
+    flex-direction: column;
+    grid-area: leftHeader;
+    width: 100%;
+}
+
+#divHorasTrabalhadas input {
+    height: 26px;
+}
+
+#divDiasTrabalhadas {
+    display: flex;
+    flex-direction: column;
+    grid-area: rightHeader;
+    width: 140px;
+}
+
+#divDiasTrabalhadas input {
+    height: 26px;
+}
+
+#divSalarioBase {
+    display: flex;
+    flex-direction: column;
+    grid-area: main;
+    width: 290px;
+}
+
+#divSalarioBase input {
+    height: 26px;
+}
+
+#custosDoProjeto {
+    height: 130px;
+    max-width: 320px;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+
+#custosDoProjeto form {
+    padding: 8px;
+    display: grid;
+    grid-template-areas: 'divDominio divHospedagemApp'
+                          'divCertificadoDigital divCertificadoDigital'
+                          'divServidorCache divHospedagemDatabase'
+                          'divDesignProjeto divDesignProjeto'
+                          'divServidorEmail divSuporte'
+                          'divAtualizacoesApp divAtualizacoesApp';
+    width: 300px;
+}
+
+#divDominio {
+    display: flex;
+    flex-direction: column;
+    grid-area: divDominio;
+    width: 140px;
+}
+
+#divDominio input {
+    height: 26px;
+}
+
+#divHospedagemApp {
+    display: flex;
+    flex-direction: column;
+    grid-area: divHospedagemApp;
+    width: 140px;
+}
+
+#divHospedagemApp input {
+    height: 26px;
+}
+
+#divCertificadoDigital {
+    display: flex;
+    flex-direction: column;
+    grid-area: divCertificadoDigital;
+    width: 290px;
+}
+
+#divCertificadoDigital input {
+    height: 26px;
+}
+
+#divServidorCache {
+    display: flex;
+    flex-direction: column;
+    grid-area: divServidorCache;
+    width: 140px;
+}
+
+#divServidorCache input {
+    height: 26px;
+}
+
+#divHospedagemDatabase {
+    display: flex;
+    flex-direction: column;
+    grid-area: divHospedagemDatabase;
+    width: 140px;
+}
+
+#divHospedagemDatabase input {
+    height: 26px;
+}
+
+#divDesignProjeto {
+    display: flex;
+    flex-direction: column;
+    grid-area: divDesignProjeto;
+    width: 290px;
+}
+
+#divDesignProjeto input {
+    height: 26px;
+}
+
+#divServidorEmail {
+    display: flex;
+    flex-direction: column;
+    grid-area: divServidorEmail;
+    width: 140px;
+}
+
+#divServidorEmail input {
+    height: 26px;
+}
+
+#divSuporte {
+    display: flex;
+    flex-direction: column;
+    grid-area: divSuporte;
+    width: 140px;
+}
+
+#divSuporte input {
+    height: 26px;
+}
+
+#divAtualizacoesApp {
+    display: flex;
+    flex-direction: column;
+    grid-area: divAtualizacoesApp;
+    width: 290px;
+}
+
+#divAtualizacoesApp input {
+    height: 26px;
 }
