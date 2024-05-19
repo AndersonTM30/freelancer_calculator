@@ -49,6 +49,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
+    document.querySelector('#darkmode-toggle').addEventListener('click', function() {
+        // const currentTheme = document.body.className = '';
+
+        document.body.classList.toggle('dark-theme');
+        // if(currentTheme == 'dark-theme') {
+        //     document.body.classList.add('light-theme');
+        // } else {
+        // }
+    })
+
     function stringParaFloat(param) {
         param = param.replace('.', '').replace(',', '.')
         return parseFloat(param);
@@ -60,50 +70,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function calcularValorHora() {
         // debugger
-        let valorHorasTrabalhadas = stringParaFloat(horasTrabalhadas.value);
-        let valorDiasTrabalhados = stringParaFloat(diasTrabalhados.value);
+        // let valorHorasTrabalhadas = stringParaFloat(horasTrabalhadas.value);
+        // let valorDiasTrabalhados = stringParaFloat(diasTrabalhados.value);
         let valorSalarioBase = stringParaFloat(salarioBase.value);
 
-        valorHorasTrabalhadas = validaTipoNumero(valorHorasTrabalhadas);
-        valorDiasTrabalhados = validaTipoNumero(valorDiasTrabalhados);
+        // valorHorasTrabalhadas = validaTipoNumero(valorHorasTrabalhadas);
+        // valorDiasTrabalhados = validaTipoNumero(valorDiasTrabalhados);
         valorSalarioBase = validaTipoNumero(valorSalarioBase);
 
-        somaValorHora = valorSalarioBase / (valorHorasTrabalhadas * valorDiasTrabalhados);
+        // somaValorHora = valorSalarioBase / (valorHorasTrabalhadas * valorDiasTrabalhados);
+        somaValorHora = valorSalarioBase / 220;
         if(somaValorHora > 0) {
+            // document.querySelector('#resultado').innerHTML = `
+            //     <p>Valor Hora: ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+            // `;
             document.querySelector('#resultado').innerHTML = `
-                <p>Valor Hora: ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                 ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
         }
 
     }
 
+    function calcularValorSuporte() {
+        let valorSuporte = stringParaFloat(suporte.value);
+        valorSuporte = validaTipoNumero(valorSuporte);
+
+        let result = somaValorHora * valorSuporte;
+        if(result > 0) {
+            document.querySelector('#resultadoSuporte').innerHTML = `
+                 ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
+            `;
+        }
+    }
+
+    function calcularValorAtualizacoes() {
+        let valorAtualizacoesApp = stringParaFloat(atualizacoesApp.value);
+        valorAtualizacoesApp = validaTipoNumero(valorAtualizacoesApp);
+
+        let result = somaValorHora * valorAtualizacoesApp;
+        if(result > 0) {
+            document.querySelector('#resultadoAtualizacoesApp').innerHTML = `
+                 ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
+            `;
+        }
+    }
+
     function calcularValorProjeto() {
         calcularValorHora();
+        calcularValorSuporte();
+        calcularValorAtualizacoes();
         
         let valorDominio = stringParaFloat(dominio.value);
-        let valoHospedagemApp = stringParaFloat(hospedagemApp.value);
-        // let valoConstrucaoProjeto = stringParaFloat(construcaoProjeto.value);
-        let valoCertificadoDigital = stringParaFloat(certificadoDigital.value);
-        let valoServidorCache = stringParaFloat(servidorCache.value);
-        let valoHospedagemDatabase = stringParaFloat(hospedagemDatabase.value);
-        let valoDesignProjeto = stringParaFloat(designProjeto.value);
-        let valoServidorEmail = stringParaFloat(servidorEmail.value);
-        let valoSuporte = stringParaFloat(suporte.value);
-        let valoAtualizacoesApp = stringParaFloat(atualizacoesApp.value);
+        let valorHospedagemApp = stringParaFloat(hospedagemApp.value);
+        // let valorConstrucaoProjeto = stringParaFloat(construcaoProjeto.value);
+        let valorCertificadoDigital = stringParaFloat(certificadoDigital.value);
+        let valorServidorCache = stringParaFloat(servidorCache.value);
+        let valorHospedagemDatabase = stringParaFloat(hospedagemDatabase.value);
+        let valorDesignProjeto = stringParaFloat(designProjeto.value);
+        let valorServidorEmail = stringParaFloat(servidorEmail.value);
+        // let valorSuporte = stringParaFloat(suporte.value);
+        // let valorAtualizacoesApp = stringParaFloat(atualizacoesApp.value);
         let valorHorasTrabalhadas = stringParaFloat(horasTrabalhadas.value);
         let valorDiasTrabalhados = stringParaFloat(diasTrabalhados.value);
         
         
         valorDominio = validaTipoNumero(valorDominio);
-        valoHospedagemApp = validaTipoNumero(valoHospedagemApp);
+        valorHospedagemApp = validaTipoNumero(valorHospedagemApp);
         // valoConstrucaoProjeto = validaTipoNumero(valoConstrucaoProjeto);
-        valoCertificadoDigital = validaTipoNumero(valoCertificadoDigital);
-        valoServidorCache = validaTipoNumero(valoServidorCache);
-        valoHospedagemDatabase = validaTipoNumero(valoHospedagemDatabase);
-        valoDesignProjeto = validaTipoNumero(valoDesignProjeto);
-        valoServidorEmail = validaTipoNumero(valoServidorEmail);
-        valoSuporte = validaTipoNumero(valoSuporte);
-        valoAtualizacoesApp = validaTipoNumero(valoAtualizacoesApp);
+        valorCertificadoDigital = validaTipoNumero(valorCertificadoDigital);
+        valorServidorCache = validaTipoNumero(valorServidorCache);
+        valorHospedagemDatabase = validaTipoNumero(valorHospedagemDatabase);
+        valorDesignProjeto = validaTipoNumero(valorDesignProjeto);
+        valorServidorEmail = validaTipoNumero(valorServidorEmail);
+        // valorSuporte = validaTipoNumero(valorSuporte);
+        // valorAtualizacoesApp = validaTipoNumero(valorAtualizacoesApp);
         valorHorasTrabalhadas = validaTipoNumero(valorHorasTrabalhadas);
         valorDiasTrabalhados = validaTipoNumero(valorDiasTrabalhados);
 
@@ -112,19 +152,22 @@ document.addEventListener('DOMContentLoaded', function () {
         // construcaoProjeto.value = valorTotalProjeto.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2});
 
         let result =    valorDominio
-                        + valoHospedagemApp
+                        + valorHospedagemApp
                         // + valoConstrucaoProjeto
-                        + valoCertificadoDigital
-                        + valoServidorCache
-                        + valoHospedagemDatabase
-                        + valoDesignProjeto
-                        + valoServidorEmail
-                        + valoSuporte
-                        + valoAtualizacoesApp
+                        + valorCertificadoDigital
+                        + valorServidorCache
+                        + valorHospedagemDatabase
+                        + valorDesignProjeto
+                        + valorServidorEmail
+                        // + valorSuporte
+                        // + valorAtualizacoesApp
                         + valorTotalProjeto;
         if(result > 0) {
+            // document.querySelector('#resultadoProjeto').innerHTML = `
+            //     <p>Valor do Projeto: ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+            // `;
             document.querySelector('#resultadoProjeto').innerHTML = `
-                <p>Valor do Projeto: ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
         }
 
