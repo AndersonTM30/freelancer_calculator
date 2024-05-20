@@ -15,6 +15,7 @@ body {
     place-content: center;
     height: 100vh;
     background-color: #f3f4f6;
+    transition: 0.2s;
 }
 /* fim reset */
 
@@ -38,21 +39,25 @@ body.dark-theme {
 body.dark-theme header,
 body.dark-theme main {
     background-color: #171717;
+    transition: 0.2s;
 }
 
 body.dark-theme input {
     background-color: #171717;
     border: 1px solid #f8fafc;
     color: #f8fafc;
+    transition: 0.2s;
 }
 
 body.dark-theme input:focus {
     outline: none;
     border-color: #84cc16;
+    transition: 0.2s;
 }
 
 body.dark-theme #container span {
     color: #84cc16;
+    transition: 0.2s;
 }
 
 header {
@@ -61,6 +66,17 @@ header {
     border-radius: .6rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: #FEFEFE;
+    transition: 0.2s;
+}
+
+header h1 {
+    color: #171717; 
+    transition: 0.2s;
+}
+
+body.dark-theme header h1 {
+    color: #FEFEFE;
+    transition: 0.2s;
 }
 
 #divHeader, #container {
@@ -139,6 +155,11 @@ main label {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #171717;
+}
+
+body.dark-theme main label {
+    color: #FEFEFE;
 }
 
 main {
@@ -151,6 +172,7 @@ main {
     align-items: center;
     border-radius: .6rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
 }
 
 main input {
@@ -163,7 +185,7 @@ main input {
 
 input:focus {
     outline: none;
-    border-color: #84cc16;
+    border-color: #FFD93B;
     /* color: #84cc16; */
 }
 
