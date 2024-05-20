@@ -14,7 +14,7 @@ body {
     display: grid;
     place-content: center;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: #f3f4f6;
 }
 /* fim reset */
 
@@ -35,37 +35,70 @@ body.dark-theme {
     transition: 0.2s;
 }
 
+body.dark-theme header,
+body.dark-theme main {
+    background-color: #171717;
+}
+
+body.dark-theme input {
+    background-color: #171717;
+    border: 1px solid #f8fafc;
+    color: #f8fafc;
+}
+
+body.dark-theme input:focus {
+    outline: none;
+    border-color: #84cc16;
+}
+
+body.dark-theme #container span {
+    color: #84cc16;
+}
+
 header {
     max-width: 47.93rem;
     margin-bottom: .8rem;
     border-radius: .6rem;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #FEFEFE;
 }
 
 #divHeader, #container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* background-color: aqua; */
     border-radius: .6rem;
 }
 
 #divHeader {
-    padding: .8rem;
+    padding: .8rem 3.2rem;
     justify-content: space-between;
     font-family: "Poppins", sans-serif;
 }
 
 #switchButton {
-    background-color: blue;
     width: 10%;
     border-radius: 1.6rem;
+}
+
+#switchButton img {
+    width: 100%;
+    transition: 0.2s;
+}
+
+.hidden {
+    display: none;
+    transition: 0.2s;
+}
+
+#darkmode-toggle {
+    background-color: transparent;
+    border: none;
 }
 
 
 #container {
     justify-content: space-evenly;
-    /* background-color: coral; */
     width: 100%;
     padding: 0 2rem;
     font-size: 1.2rem;
@@ -76,7 +109,7 @@ header {
 
 #container span {
     font-weight: 700;
-    color: blue;
+    color: #1d4ed8;
     font-size: 1.4rem;
 }
 
@@ -88,7 +121,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: blueviolet; */
     margin: .4rem;
     border-radius: .6rem;
     padding: .2rem;
@@ -98,7 +130,8 @@ header {
 
 main input, button {
     border-radius: .6rem;
-    border: 1px solid blue;
+    border: .2rem solid #1d4ed8;
+    /* border: none; */
 }
 
 main label {
@@ -110,31 +143,33 @@ main label {
 
 main {
     max-width: 47.93rem;
-    /* background-color: #FEFEFE; */
+    background-color: #FEFEFE;
     /* overflow: auto; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border-radius: .6rem;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 main input {
     padding-left: .8rem;
     margin: .4rem .4rem .4rem 0;
     transition: border-color 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: #1d4ed8;
 }
 
 input:focus {
     outline: none;
-    border-color: green;
+    border-color: #84cc16;
+    /* color: #84cc16; */
 }
 
 #valorHora {
     padding: .8rem .8rem 0 .8rem;
     width: 100%;
-    /* background-color: aqua; */
     border-radius: .6rem;
 }
 
@@ -144,7 +179,6 @@ input:focus {
     grid-template-areas: 'main main'
                           'leftHeader rightHeader';
     width: 100%;
-    /* background-color: brown; */
 }
 
 #valorHora input {
@@ -161,29 +195,24 @@ input:focus {
 
 #divHorasTrabalhadas {
     grid-area: leftHeader;
-    /* background-color: cadetblue; */
     padding: .4rem .4rem .4rem .8rem; 
 }
 
 
 #divDiasTrabalhadas {
     grid-area: rightHeader;
-    /* background-color: cadetblue; */
     padding: .4rem .8rem .4rem .4rem; 
 }
 
 #divSalarioBase {
     grid-area: main;
-    /* background-color: chocolate; */
     padding: .4rem .8rem;
 }
 
 #custosDoProjeto {
     width: 100%;
     padding: 0 .8rem .8rem .8rem;
-    /* background-color: rgb(43, 218, 87); */
     border-radius: .6rem;
-    /* margin-top: .4rem; */
 }
 
 
@@ -197,7 +226,6 @@ input:focus {
                           'divServidorEmail divSuporte'
                           'divAtualizacoesApp divAtualizacoesApp';
     width: 100%;
-    /* background-color: blueviolet; */
 }
 
 #custosDoProjeto input {
@@ -221,14 +249,12 @@ input:focus {
 #divDominio,
 #divServidorCache,
 #divServidorEmail {
-    /* background-color: cadetblue; */
     padding: .4rem .4rem .4rem .8rem; 
 }
 
 #divHospedagemApp,
 #divHospedagemDatabase,
 #divSuporte {
-    /* background-color: cadetblue; */
     padding: .4rem .8rem .4rem .4rem; 
 }
 
@@ -236,7 +262,6 @@ input:focus {
 #divDesignProjeto,
 #divCertificadoDigital,
 #divAtualizacoesApp {
-    /* background-color: chocolate; */
     padding: .4rem .8rem;
 }
 

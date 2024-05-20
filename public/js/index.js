@@ -1,6 +1,7 @@
 ﻿import { moneyMask } from "./utils.js";
 document.addEventListener('DOMContentLoaded', function () {
     let somaValorHora = 0;
+    let isLight = false;
     let horasTrabalhadas = document.querySelector('#horasTrabalhadas');
     let diasTrabalhados = document.querySelector('#diasTrabalhados');
     let salarioBase = document.querySelector('#salarioBase');
@@ -50,13 +51,22 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     document.querySelector('#darkmode-toggle').addEventListener('click', function() {
-        // const currentTheme = document.body.className = '';
+        const lightImage = document.querySelector('.light-image');
+        const darkImage = document.querySelector('.dark-image');
 
         document.body.classList.toggle('dark-theme');
-        // if(currentTheme == 'dark-theme') {
-        //     document.body.classList.add('light-theme');
-        // } else {
-        // }
+
+        if(isLight) {
+            lightImage.classList.remove('hidden');
+            darkImage.classList.add('hidden');
+            isLight = false;
+        } else {
+            darkImage.classList.remove('hidden');
+            lightImage.classList.add('hidden');
+            isLight = true;
+
+        }
+ 
     })
 
     function stringParaFloat(param) {

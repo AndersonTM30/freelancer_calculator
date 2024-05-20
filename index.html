@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>Calcular Freela</title>
 </head>
 <body>
@@ -14,8 +14,12 @@
         <div id="divHeader">
             <h1>Calcular Freela</h1>
             <div id="switchButton">
-                <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle">
-                <label for="darkmode-toggle" class="darkmode"></label>
+                <button id="darkmode-toggle">
+                    <img src="public/assets/sol.png" alt="sol" class="light-image">
+                    <img src="public/assets/lua.png" alt="sol" class="dark-image hidden">
+                </button>
+                <!-- <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle"> -->
+                <!-- <label for="darkmode-toggle" class="darkmode"></label> -->
             </div>
         </div>
         <div id="container">
@@ -98,7 +102,7 @@
             </form>
         </div>
     </main>
-    <script type="module" src="./index.js"></script>
-    <script type="module" src="./utils.js"></script>
+    <script type="module" src="public/js/index.js"></script>
+    <script type="module" src="public/js/utils.js"></script>
 </body>
 </html>
