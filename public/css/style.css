@@ -3,25 +3,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
     font-size: 62.5%;
+    --green: #84cc16;
+    --gray: #f3f4f6;
+    --black: #171717;
+    --white: #FEFEFE;
+    --blue: #1d4ed8;
+    --yellow: #FFD93B;
+    --shadow: rgba(99, 99, 99, 0.2);
 }
 
 body {
-    font-size: 1.6rem;
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    background-color: #f3f4f6;
+    background-color: var(--white);
     transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
 }
 /* fim reset */
 
 /* scroll bar */
 ::-webkit-scrollbar {
-    width: .8rem;
+    width: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -30,76 +41,53 @@ body {
 }
 /* fim scroll bar */
 
+/* dark mode */
 body.dark-theme {
-    background-color: #171717;
-    color: #f8fafc;
+    background-color: var(--black);
+    color: var(--white);
     transition: 0.2s;
 }
 
 body.dark-theme header,
 body.dark-theme main {
-    background-color: #171717;
+    background-color: var(--black);
     transition: 0.2s;
 }
 
 body.dark-theme input {
-    background-color: #171717;
-    border: 1px solid #f8fafc;
-    color: #f8fafc;
+    background-color: var(--black);
+    border: .2rem solid var(--white);
+    color: var(--white);
     transition: 0.2s;
 }
 
 body.dark-theme input:focus {
     outline: none;
-    border-color: #84cc16;
+    border-color: var(--green);
     transition: 0.2s;
 }
 
 body.dark-theme #container span {
-    color: #84cc16;
+    color: var(--green);
     transition: 0.2s;
 }
+
+body.dark-theme main header p {
+    color: var(--white);
+    transition: 0.2s;
+}
+
+body.dark-theme #divHeader h1 {
+    color: var(--green);
+    transition: 0.2s;
+}
+/* fim dark mode */
 
 header {
-    max-width: 47.93rem;
-    margin-bottom: .8rem;
-    border-radius: .6rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: #FEFEFE;
-    transition: 0.2s;
-}
-
-header h1 {
-    color: #171717; 
-    transition: 0.2s;
-}
-
-body.dark-theme header h1 {
-    color: #FEFEFE;
-    transition: 0.2s;
-}
-
-#divHeader, #container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: .6rem;
-}
-
-#divHeader {
-    padding: .8rem 3.2rem;
-    justify-content: space-between;
-    font-family: "Poppins", sans-serif;
-}
-
-#switchButton {
-    width: 10%;
-    border-radius: 1.6rem;
-}
-
-#switchButton img {
     width: 100%;
-    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
 }
 
 .hidden {
@@ -107,219 +95,146 @@ body.dark-theme header h1 {
     transition: 0.2s;
 }
 
-#darkmode-toggle {
-    background-color: transparent;
-    border: none;
+#divHeader,
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
 }
 
-
-#container {
-    justify-content: space-evenly;
+#divHeader {
     width: 100%;
-    padding: 0 2rem;
+    padding: .5rem;
+}
+
+#divHeader h1 {
+    color: var(--blue);
+    transition: 0.2s;
+}
+
+#switchButton img {
+    width: 2.625rem;
+    height: 2.625rem;
+    transition: 0.2s;
+}
+
+#switchButton button {
+    border: none;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+#container div {
+    width: 100%;
+    padding: .25rem;
+    color: var(--black);
+}
+
+#container p {
     font-size: 1.2rem;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 #container span {
     font-weight: 700;
-    color: #1d4ed8;
     font-size: 1.4rem;
-}
-
-#divValorHora,
-#divValorSuporte,
-#divValorAtualizacoesApp, 
-#divValorProjeto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: .4rem;
-    border-radius: .6rem;
-    padding: .2rem;
-    width: 100%;
-    height: 8vh;
-}
-
-main input, button {
-    border-radius: .6rem;
-    border: .2rem solid #1d4ed8;
-    /* border: none; */
-}
-
-main label {
-    font-size: 1.2rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #171717;
-}
-
-body.dark-theme main label {
-    color: #FEFEFE;
+    color: var(--blue);
+    color: var(--blue);
 }
 
 main {
-    max-width: 47.93rem;
-    background-color: #FEFEFE;
-    /* overflow: auto; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: .6rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 100%;
+    min-height: 100vh;
+    padding: .5rem;
     transition: 0.2s;
 }
 
-main input {
-    padding-left: .8rem;
-    margin: .4rem .4rem .4rem 0;
-    transition: border-color 0.3s ease;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    color: #1d4ed8;
-}
-
-input:focus {
-    outline: none;
-    border-color: #FFD93B;
-    /* color: #84cc16; */
-}
-
-#valorHora {
-    padding: .8rem .8rem 0 .8rem;
-    width: 100%;
-    border-radius: .6rem;
-}
-
-#valorHora form {
-    padding: .8rem .8rem 0 .8rem;
+form {
     display: grid;
-    grid-template-areas: 'main main'
-                          'leftHeader rightHeader';
-    width: 100%;
-}
-
-#valorHora input {
-    height: 2.6rem;
-}
-
-#divHorasTrabalhadas, 
-#divDiasTrabalhadas, 
-#divSalarioBase {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-#divHorasTrabalhadas {
-    grid-area: leftHeader;
-    padding: .4rem .4rem .4rem .8rem; 
-}
-
-
-#divDiasTrabalhadas {
-    grid-area: rightHeader;
-    padding: .4rem .8rem .4rem .4rem; 
-}
-
-#divSalarioBase {
-    grid-area: main;
-    padding: .4rem .8rem;
-}
-
-#custosDoProjeto {
-    width: 100%;
-    padding: 0 .8rem .8rem .8rem;
-    border-radius: .6rem;
-}
-
-
-#custosDoProjeto form {
-    padding: 0 .8rem .8rem .8rem;
-    display: grid;
-    grid-template-areas: 'divDominio divHospedagemApp'
+    padding: .5rem;
+    font-size: 1.2rem;
+    grid-template-areas: 'divSalarioBase divSalarioBase '
+                          'divHorasTrabalhadas divDiasTrabalhadas'
+                          'divDominio divHospedagemApp'
                           'divCertificadoDigital divCertificadoDigital'
                           'divServidorCache divHospedagemDatabase'
                           'divDesignProjeto divDesignProjeto'
                           'divServidorEmail divSuporte'
                           'divAtualizacoesApp divAtualizacoesApp';
+}
+
+form input {
     width: 100%;
+    color: var(--blue);
+    padding: .5rem;
+    border-radius: .50rem;
+    margin: .5rem 0;
+    font-size: 1.2rem;
+    border: .2rem solid var(--blue);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-#custosDoProjeto input {
-    height: 2.6rem;
+form input:focus {
+    outline: none;
+    border-color: var(--yellow);
+    transition: 0.2s;
 }
 
-#divDominio,
-#divHospedagemApp,
-#divCertificadoDigital,
-#divServidorCache,
-#divHospedagemDatabase, 
-#divDesignProjeto, 
-#divServidorEmail,
-#divSuporte,
-#divAtualizacoesApp {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+form label {
+    font-size: 1.2rem;
 }
 
+#divSalarioBase {
+    grid-area: divSalarioBase;
+}
+
+#divHorasTrabalhadas,
 #divDominio,
 #divServidorCache,
 #divServidorEmail {
-    padding: .4rem .4rem .4rem .8rem; 
+    margin-right: .25rem;
 }
 
+#divDiasTrabalhadas,
 #divHospedagemApp,
 #divHospedagemDatabase,
 #divSuporte {
-    padding: .4rem .8rem .4rem .4rem; 
+    margin-left: .25rem;
 }
 
-#divCertificadoDigita,
-#divDesignProjeto,
-#divCertificadoDigital,
-#divAtualizacoesApp {
-    padding: .4rem .8rem;
+#divHorasTrabalhadas {
+    grid-area: divHorasTrabalhadas;
 }
-
+#divDiasTrabalhadas {
+    grid-area: divDiasTrabalhadas;
+}
 #divDominio {
     grid-area: divDominio;
 }
-
 #divHospedagemApp {
     grid-area: divHospedagemApp;
 }
-
 #divCertificadoDigital {
     grid-area: divCertificadoDigital;
 }
-
 #divServidorCache {
     grid-area: divServidorCache;
 }
-
 #divHospedagemDatabase {
     grid-area: divHospedagemDatabase;
 }
-
 #divDesignProjeto {
     grid-area: divDesignProjeto;
 }
-
-
 #divServidorEmail {
     grid-area: divServidorEmail;
 }
-
 #divSuporte {
     grid-area: divSuporte;
 }
-
 #divAtualizacoesApp {
     grid-area: divAtualizacoesApp;
 }
