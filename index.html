@@ -10,36 +10,35 @@
     <title>Calcular Freela</title>
 </head>
 <body>
-    <header>
-        <div id="divHeader">
-            <h1>Calcular Freela</h1>
-            <div id="switchButton">
-                <button id="darkmode-toggle">
-                    <img src="public/assets/sol.png" alt="sol" class="light-image">
-                    <img src="public/assets/lua.png" alt="sol" class="dark-image hidden">
-                </button>
-                <!-- <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle"> -->
-                <!-- <label for="darkmode-toggle" class="darkmode"></label> -->
-            </div>
-        </div>
-        <div id="container">
-            <div id="divValorHora">
-                <p>Valor Hora: <div><span id="resultado">0,00</span></div></p>        
-            </div>
-            <div id="divValorSuporte">
-                <p>Valor Mensal Suporte: <div><span id="resultadoSuporte">0,00</span></div></p>        
-            </div>
-            <div id="divValorAtualizacoesApp">
-                <p>Valor Mensal Atualizações: <div><span id="resultadoAtualizacoesApp">0,00</span></div></p>        
-            </div>
-            <div id="divValorProjeto">
-                <p>Valor do Projeto: <div><span id="resultadoProjeto">0,00</span></div></p> 
-            </div>
-        </div>
-    </header>
     <main>
-        <div id="valorHora">
-            <form method="post">
+        <header>
+            <div id="divHeader">
+                <h1>Calcular Freela</h1>
+                <div id="switchButton">
+                    <button id="darkmode-toggle">
+                        <img src="public/assets/sol.png" alt="sol" class="light-image">
+                        <img src="public/assets/lua.png" alt="sol" class="dark-image hidden">
+                    </button>
+                    <!-- <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle"> -->
+                    <!-- <label for="darkmode-toggle" class="darkmode"></label> -->
+                </div>
+            </div>
+            <div id="container">
+                <div id="divValorHora">
+                    <p>Valor Hora: <div><span id="resultado">0,00</span></div></p>        
+                </div>
+                <div id="divValorSuporte">
+                    <p>Valor Mensal Suporte: <div><span id="resultadoSuporte">0,00</span></div></p>        
+                </div>
+                <div id="divValorAtualizacoesApp">
+                    <p>Valor Mensal Atualizações: <div><span id="resultadoAtualizacoesApp">0,00</span></div></p>        
+                </div>
+                <div id="divValorProjeto">
+                    <p>Valor do Projeto: <div><span id="resultadoProjeto">0,00</span></div></p> 
+                </div>
+            </div>
+        </header>
+            <form>
                 <div id="divSalarioBase">
                     <label for="salarioBase">Salário Base</label>
                     <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
@@ -52,11 +51,6 @@
                     <label for="diasTrabalhados">Dias Trabalhados</label>
                     <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
                 </div>
-                <!-- <button id="enviarDadosFreela" type="submit">Calcular Valor Hora</button> -->
-            </form>
-        </div>
-        <div id="custosDoProjeto">
-            <form>
                 <div id="divDominio">
                     <label for="dominio">Domínio</label>
                     <input type="text" name="dominio" id="dominio" placeholder="0,00" maxlength="20">
@@ -100,7 +94,6 @@
 
                 <!-- <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button> -->
             </form>
-        </div>
     </main>
     <script type="module" src="public/js/index.js"></script>
     <script type="module" src="public/js/utils.js"></script>
