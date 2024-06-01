@@ -81,6 +81,10 @@ body.dark-theme #divHeader h1 {
     color: var(--green);
     transition: 0.2s;
 }
+
+/* body.dark-theme .botton-border {
+    border-bottom: .2rem solid var(--green);
+} */
 /* fim dark mode */
 
 header {
@@ -106,7 +110,7 @@ header {
 
 #divHeader {
     width: 100%;
-    padding: .5rem;
+    /* padding: .5rem; */
 }
 
 #divHeader h1 {
@@ -126,23 +130,77 @@ header {
     transition: 0.2s;
 }
 
-#container div {
-    width: 100%;
-    padding: .25rem;
-    color: var(--black);
+#container {
+    display: grid;
+    height: 15vh;
+    grid-template-areas: 'divValorHora divValorAtualizacoesApp'
+                          'divValorSuporte divValorProjeto';
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
 }
 
 #container p {
     font-size: 1.2rem;
     font-weight: 400;
     font-style: normal;
+    text-align: start;
 }
 
 #container span {
     font-weight: 700;
     font-size: 1.4rem;
     color: var(--blue);
-    color: var(--blue);
+    /* border-bottom: .2rem solid var(--blue); */
+}
+
+#divValorHora,
+#divValorSuporte,
+#divValorAtualizacoesApp,
+#divValorProjeto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .1rem dashed;
+}
+
+#divValorHora div,
+#divValorSuporte div,
+#divValorAtualizacoesApp div,
+#divValorProjeto div {
+    text-align: right;
+    width: 100%;
+}
+
+#divValorHora div p,
+#divValorSuporte div p,
+#divValorAtualizacoesApp div p,
+#divValorProjeto div p {
+    text-align: start;
+}
+
+/* .botton-border {
+    border-bottom: .2rem solid var(--blue);
+}
+
+.botton-shadow {
+    border-bottom: .2rem solid var(--gray);
+} */
+
+#divValorHora {
+    grid-area: divValorHora;
+}
+
+#divValorSuporte {
+    grid-area: divValorSuporte;
+}
+
+#divValorAtualizacoesApp {
+    grid-area: divValorAtualizacoesApp;
+}
+
+#divValorProjeto {
+    grid-area: divValorProjeto;
 }
 
 main {
@@ -175,6 +233,7 @@ form input {
     font-size: 1.2rem;
     border: .2rem solid var(--blue);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
 }
 
 form input:focus {
