@@ -1,0 +1,259 @@
+﻿@import url("./root.css");
+
+/* dark mode */
+body.dark-theme {
+    background-color: var(--black);
+    color: var(--white);
+    transition: 0.2s;
+}
+
+body.dark-theme header,
+body.dark-theme main {
+    background-color: var(--black);
+    transition: 0.2s;
+}
+
+body.dark-theme input {
+    background-color: var(--black);
+    border: .2rem solid var(--white);
+    color: var(--white);
+    transition: 0.2s;
+}
+
+body.dark-theme input:focus {
+    outline: none;
+    border-color: var(--green);
+    transition: 0.2s;
+}
+
+body.dark-theme #container span {
+    color: var(--green);
+    transition: 0.2s;
+}
+
+body.dark-theme main header p {
+    color: var(--white);
+    transition: 0.2s;
+}
+
+body.dark-theme #divHeader h1 {
+    color: var(--green);
+    transition: 0.2s;
+}
+
+/* body.dark-theme .botton-border {
+    border-bottom: .2rem solid var(--green);
+} */
+/* fim dark mode */
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+
+.hidden {
+    display: none;
+    transition: 0.2s;
+}
+
+#divHeader,
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+}
+
+#divHeader {
+    width: 100%;
+    /* padding: .5rem; */
+}
+
+#divHeader h1 {
+    color: var(--blue);
+    transition: 0.2s;
+}
+
+#switchButton img {
+    width: 2.625rem;
+    height: 2.625rem;
+    transition: 0.2s;
+}
+
+#switchButton button {
+    border: none;
+    background-color: transparent;
+    transition: 0.2s;
+}
+
+#container {
+    display: grid;
+    height: 15vh;
+    grid-template-areas: 'divValorHora divValorAtualizacoesApp'
+                          'divValorSuporte divValorProjeto';
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    padding: .8rem;
+}
+
+#container p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: start;
+}
+
+#container span {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--blue);
+    /* border-bottom: .2rem solid var(--blue); */
+}
+
+#divValorHora,
+#divValorSuporte,
+#divValorAtualizacoesApp,
+#divValorProjeto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .1rem dashed;
+}
+
+#divValorHora div,
+#divValorSuporte div,
+#divValorAtualizacoesApp div,
+#divValorProjeto div {
+    text-align: right;
+    width: 100%;
+}
+
+#divValorHora div p,
+#divValorSuporte div p,
+#divValorAtualizacoesApp div p,
+#divValorProjeto div p {
+    text-align: start;
+}
+
+/* .botton-border {
+    border-bottom: .2rem solid var(--blue);
+}
+
+.botton-shadow {
+    border-bottom: .2rem solid var(--gray);
+} */
+
+#divValorHora {
+    grid-area: divValorHora;
+}
+
+#divValorSuporte {
+    grid-area: divValorSuporte;
+}
+
+#divValorAtualizacoesApp {
+    grid-area: divValorAtualizacoesApp;
+}
+
+#divValorProjeto {
+    grid-area: divValorProjeto;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: .5rem;
+    transition: 0.2s;
+}
+
+form {
+    display: grid;
+    padding: .5rem;
+    font-size: 1.2rem;
+    grid-template-areas: 'divSalarioBase divSalarioBase '
+                          'divHorasTrabalhadas divDiasTrabalhadas'
+                          'divDominio divHospedagemApp'
+                          'divCertificadoDigital divCertificadoDigital'
+                          'divServidorCache divHospedagemDatabase'
+                          'divDesignProjeto divDesignProjeto'
+                          'divServidorEmail divSuporte'
+                          'divAtualizacoesApp divAtualizacoesApp';
+}
+
+form input {
+    width: 100%;
+    color: var(--blue);
+    padding: .5rem;
+    border-radius: .50rem;
+    margin: .5rem 0;
+    font-size: 1.2rem;
+    border: .2rem solid var(--blue);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--yellow);
+    transition: 0.2s;
+}
+
+form label {
+    font-size: 1.2rem;
+}
+
+#divSalarioBase {
+    grid-area: divSalarioBase;
+}
+
+#divHorasTrabalhadas,
+#divDominio,
+#divServidorCache,
+#divServidorEmail {
+    margin-right: .25rem;
+}
+
+#divDiasTrabalhadas,
+#divHospedagemApp,
+#divHospedagemDatabase,
+#divSuporte {
+    margin-left: .25rem;
+}
+
+#divHorasTrabalhadas {
+    grid-area: divHorasTrabalhadas;
+}
+#divDiasTrabalhadas {
+    grid-area: divDiasTrabalhadas;
+}
+#divDominio {
+    grid-area: divDominio;
+}
+#divHospedagemApp {
+    grid-area: divHospedagemApp;
+}
+#divCertificadoDigital {
+    grid-area: divCertificadoDigital;
+}
+#divServidorCache {
+    grid-area: divServidorCache;
+}
+#divHospedagemDatabase {
+    grid-area: divHospedagemDatabase;
+}
+#divDesignProjeto {
+    grid-area: divDesignProjeto;
+}
+#divServidorEmail {
+    grid-area: divServidorEmail;
+}
+#divSuporte {
+    grid-area: divSuporte;
+}
+#divAtualizacoesApp {
+    grid-area: divAtualizacoesApp;
+}
