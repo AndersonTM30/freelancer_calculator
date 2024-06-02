@@ -1,0 +1,97 @@
+@import url("./root.css");
+@media screen and (min-width: 640px) {
+    main {
+        display: grid;
+        grid-template-areas: 'header header' 
+                             'form section';
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 8% 91%;
+        gap: .8rem;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #switchButton {
+        height: 100%;
+        width: 4rem;
+        /* background-color: blueviolet; */
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #switchButton button {
+        height: 100%;
+        width: 100%;
+    }
+
+    #switchButton button img {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    section {
+        grid-area: section;
+    }
+
+    section #container {
+        display: grid;
+        grid-template-areas: 'divValorHora'
+                              'divValorSuporte'
+                              'divValorAtualizacoesApp'
+                              'divValorProjeto';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: .8rem;
+        height: 100%;
+    }
+
+    section #container span {
+        font-weight: 700;
+        font-size: 5rem;
+    }
+
+    section #container p {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    section #container div {
+        border-bottom: none;
+        padding: .4rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    #divValorHora {
+        grid-area: divValorHora;
+    }
+
+    #divValorSuporte {
+        grid-area: divValorSuporte;
+    }
+
+    #divValorAtualizacoesApp {
+        grid-area: divValorAtualizacoesApp;
+    }
+
+    #divValorProjeto {
+        grid-area: divValorProjeto;
+    }
+
+    form {
+        grid-area: form;
+    }
+
+    form label {
+        font-size: 1.6rem;
+    }
+}
