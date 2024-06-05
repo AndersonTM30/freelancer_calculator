@@ -12,7 +12,6 @@ export function moneyMask(inputElement) {
             valorMascarado = valorMascarado.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
             
         }
-        // console.log(`Tamanho: ${valorMascarado.length} - Valor do Campo: ${valorMascarado}`);
         this.value = valorMascarado;
         this.setSelectionRange(this.value.length, this.value.length);
     });
