@@ -1,9 +1,6 @@
 @import url("./root.css");
 
 @media screen and (min-width: 1024px) {
-    /* body {
-        background-color: var(--gray);
-    } */
 
     main {
         width: 80%;
@@ -12,6 +9,7 @@
     }
 
     form label {
-        font-size: 1.6rem;
+        display: flex;
+        flex-direction: row;
     }
 }

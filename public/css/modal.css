@@ -1,0 +1,124 @@
+.help_icon {
+    margin-left: .8rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    color: var(--blue);
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border: 2px solid var(--blue);
+    transition: 0.2s;
+}
+
+.help_icon:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hidden_modal {
+    display: none;
+}
+
+.modal {
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.9);
+   top: 0;
+   right: 0; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal_message {
+    background-color: var(--white);
+    width: 50%;
+    height: 50%;
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem;
+}
+
+.hide_modal {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hide_modal button {
+    height: 100%;
+    width: 10%;
+    border: 2px solid var(--blue);
+    background-color: transparent;
+    border-radius: .6rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--blue);
+    transition: 0.2s;
+}
+
+.hide_modal button:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.message {
+    height: 85%;
+    width: 100%;
+    padding: .8rem;
+}
+
+.message span {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+@media screen and (min-width: 1024px) {
+    .modal_message {
+        width: 50%;
+        height: 50%;
+        /* padding: 1.4rem; */
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .modal_message {
+        width: 60%;
+        height: 60%;
+        padding: 1.4rem;
+    }
+    .hide_modal button {
+        width: 10%;
+        height: 74%;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .modal_message {
+        width: 80%;
+        padding: 1.2rem;
+    }
+
+    .hide_modal button {
+        width: 15%;
+        height: 64%;
+    }
+}

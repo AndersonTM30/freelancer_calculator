@@ -17,4 +17,16 @@ export function moneyMask(inputElement) {
     });
 }
 
+export function showModal(message) {
+    let modal = document.querySelector('#modal');
+    modal.classList.remove('hidden_modal')
+    modal.classList.add('modal')
+    document.querySelector('.message').innerHTML = `<span>${message}</span>`;
+}
 
+export function hideModal(e) {
+    e.preventDefault();
+    let modal = document.querySelector('.modal');
+    modal.classList.remove('modal');
+    modal.classList.add('hidden_modal');
+}
