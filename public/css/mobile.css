@@ -41,6 +41,15 @@ body.dark-theme #divHeader h1 {
     transition: 0.2s;
 }
 
+body.dark-theme .help_icon {
+    border: 2px solid var(--green);
+    color: var(--white);
+}
+
+body.dark-theme .help_icon:hover {
+    background-color: var(--green);
+}
+
 /* body.dark-theme .botton-border {
     border-bottom: .2rem solid var(--green);
 } */

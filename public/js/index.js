@@ -1,4 +1,4 @@
-﻿import { moneyMask } from "./utils.js";
+﻿import { moneyMask, showModal, hideModal } from "./utils.js";
 document.addEventListener('DOMContentLoaded', function () {
     let somaValorHora = 0;
     let isLight = false;
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let servidorEmail = document.querySelector('#servidorEmail');
     let suporte = document.querySelector('#suporte');
     let atualizacoesApp = document.querySelector('#atualizacoesApp');
+    let modal = document.querySelector('#modal');
 
     diasTrabalhados.value = 0;
 
@@ -70,6 +71,76 @@ document.addEventListener('DOMContentLoaded', function () {
         }
  
     })
+
+    document.querySelector('#divSalarioBase .help_icon').addEventListener('click', function() {
+        let message = 'Valor que o contratado deseja receber mensalmente. Este valor leva em consideração os custos fixos e variáveis mensais mais a margem de lucro, exemplo: custos fixos = 2.000,00; custos variáveis = 1.000,00; margem de lucro = 20%; valor base = 3.600,00.';
+        showModal(message);
+    });
+    
+    document.querySelector('#divHorasTrabalhadas .help_icon').addEventListener('click', function() {
+        let message = 'Quantidade de horas trabalhas por dia para entregar a aplicação, acordadas via contrato assinado pelo contratante e contratado.';
+        showModal(message);
+    });
+
+    document.querySelector('#divDiasTrabalhadas .help_icon').addEventListener('click', function() {
+        let message = 'Quantidade de dias para entregar a aplicação, acordadas via contrato assinado pelo contratante e contratado.';
+        showModal(message);
+    });
+    
+    document.querySelector('#divDominio .help_icon').addEventListener('click', function() {
+        let message = 'Custo para contratação de um domínio (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+    
+    document.querySelector('#divHospedagemApp .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para contratação de seriços de cloud para hospedagem da aplicação (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+
+    document.querySelector('#divCertificadoDigital .help_icon').addEventListener('click', function() {
+        let message = 'Custo para contratação de certificado digital para trafegar os dados de forma encriptada, gerando uma camada maior de segurança na aplicação (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+
+    document.querySelector('#divServidorCache .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para contratação de um servidor de cache para que a aplicação funcione de forma mais performática e gerar uma economia no tráfego de dados (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+
+    document.querySelector('#divHospedagemDatabase .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para contratação de um servidor de banco de dados (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+
+    document.querySelector('#divDesignProjeto .help_icon').addEventListener('click', function() {
+        let message = 'Custo para construção do design da aplicação (opcional em caso do cliente já ter o design pronto).';
+        showModal(message);
+    });
+
+    document.querySelector('#divServidorEmail .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para contratação de um servidor para envio de e-mail (opcional caso o cliente já obtenha).';
+        showModal(message);
+    });
+    
+    document.querySelector('#divSuporte .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para suporte na aplicação (opcional).';
+        showModal(message);
+    });
+
+    document.querySelector('#divAtualizacoesApp .help_icon').addEventListener('click', function() {
+        let message = 'Custo mensal para atualizações na aplicação que podem ser adição de novas funcionalidades, migração de servidor, integrações com APIs de terceiros (opcional).';
+        showModal(message);
+    });
+
+    document.querySelector('.hide_modal button').addEventListener('click', function(e){
+        hideModal(e);
+    });
+
+    window.onclick = function(event) {
+        if(event.target == modal) {
+            hideModal(event);
+        }
+    }
 
     function stringParaFloat(param) {
         param = param.replaceAll('.', '').replaceAll(',', '.')
