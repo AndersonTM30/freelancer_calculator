@@ -167,11 +167,12 @@ document.addEventListener('DOMContentLoaded', function () {
         valorSalarioBase = parseFloat(valorSalarioBase);
         let horas = parseFloat(220);
         somaValorHora = valorSalarioBase / horas;
-        console.log(`Salário Base: ${valorSalarioBase} - Carga horária: ${horas} - Soma valor hora: ${somaValorHora.toFixed(2)}`);
         if(somaValorHora > 0) {
             document.querySelector('#resultado').innerHTML = `
                  ${somaValorHora.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
+        } else {
+            document.querySelector('#resultado').innerHTML = `0,00`;
         }
 
     }
@@ -181,10 +182,13 @@ document.addEventListener('DOMContentLoaded', function () {
         valorSuporte = validaTipoNumero(valorSuporte);
 
         let result = somaValorHora * valorSuporte;
+
         if(result > 0) {
             document.querySelector('#resultadoSuporte').innerHTML = `
                  ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
+        } else {
+            document.querySelector('#resultadoSuporte').innerHTML = `0,00`;
         }
     }
 
@@ -197,6 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('#resultadoAtualizacoesApp').innerHTML = `
                  ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
+        } else {
+            document.querySelector('#resultadoAtualizacoesApp').innerHTML = `0,00`;
         }
     }
 
@@ -240,6 +246,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('#resultadoProjeto').innerHTML = `
                 ${result.toLocaleString('pt-BR', {currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2})}
             `;
+        } else {
+            document.querySelector('#resultadoProjeto').innerHTML = `0,00`;
         }
 
     }
