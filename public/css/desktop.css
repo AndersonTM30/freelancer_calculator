@@ -1,0 +1,15 @@
+@import url("./root.css");
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        width: 80%;
+        background-color: var(--white);
+        box-shadow: 15px 0 10px -5px rgba(0, 0, 0, 0.1), -15px 0 10px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+        display: flex;
+        flex-direction: row;
+    }
+}

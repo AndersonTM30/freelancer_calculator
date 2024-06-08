@@ -3,82 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Calcular Freela</title>
+    <link rel="shortcut icon" href="/public/assets/calculadora.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Dev Freela Calc</title>
 </head>
 <body>
-    <header>
-        <h1>Calcular Freela</h1>
-    </header>
     <main>
-        <form method="post">
-            <div id="divHorasTrabalhadas">
-                <label for="horasTrabalhadas">Horas Trabalhadas</label>
-            <input type="number" name="horasTrabalhadas" id="horasTrabalhadas" placeholder="0" maxlength="20">
+        <header>
+            <div id="divHeader">
+                <h1>Dev Freela Calc</h1>
+                <div id="switchButton">
+                    <button id="darkmode-toggle">
+                        <img src="public/assets/sol.png" alt="sol" class="light-image">
+                        <img src="public/assets/lua.png" alt="sol" class="dark-image hidden">
+                    </button>
+                    <!-- <input type="checkbox" name="darkmode-toggle" id="darkmode-toggle"> -->
+                    <!-- <label for="darkmode-toggle" class="darkmode"></label> -->
+                </div>
             </div>
-            <div id="divDiasTrabalhadas">
-                <label for="diasTrabalhados">Dias Trabalhados</label>
-            <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
+        </header>
+        <section>
+            <div id="container">
+                <div id="divValorHora">
+                    <div><p>Valor Hora: </p></div>
+                     <div class="botton-border"><span id="resultado">0,00</span></div>       
+                </div>
+                <div id="divValorSuporte">
+                    <div>
+                        <p>Valor do Suporte: </p>
+                    </div>
+                    <div class="botton-border"><span id="resultadoSuporte">0,00</span></div>        
+                </div>
+                <div id="divValorAtualizacoesApp">
+                    <div><p>Valor Atualizações: </p></div>
+                    <div class="botton-border"><span id="resultadoAtualizacoesApp">0,00</span></div>        
+                </div>
+                <div id="divValorProjeto">
+                    <div class="botton-shadow"><p>Valor do Projeto: </p></div>
+                    <div class="botton-border"><span id="resultadoProjeto">0,00</span></div> 
+                </div>
             </div>
-            <div id="divSalarioBase">
-                <label for="salarioBase">Salário Base</label>
-            <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
-            </div>
-            <div id="resultado">
-                
-            </div>
-            <!-- <button id="enviarDadosFreela" type="submit">Calcular Valor Hora</button> -->
-        </form>
-        <div id="custosDoProjeto">
+        </section>
             <form>
+                <div id="divSalarioBase">
+                    <div class="inline">
+                        <label for="salarioBase">Salário</label>
+                        <div class="help_icon">?</div> 
+                    </div>
+                    <input type="text" name="salarioBase" id="salarioBase" placeholder="0,00" maxlength="20">
+                </div>
+                <div id="divHorasTrabalhadas">
+                    <div class="inline">
+                        <label for="horasTrabalhadas">Horas/Dia</label>
+                        <div class="help_icon">?</div> 
+                    </div>
+                    <input type="text" name="horasTrabalhadas" id="horasTrabalhadas" placeholder="0" maxlength="20">
+                </div>
+                <div id="divDiasTrabalhadas">
+                    <div class="inline">
+                        <label for="diasTrabalhados">Dias</label>
+                        <div class="help_icon">?</div> 
+                    </div>
+                    <input type="number" name="diasTrabalhados" id="diasTrabalhados" placeholder="0" maxlength="20">
+                </div>
                 <div id="divDominio">
-                    <label for="dominio">Domínio</label>
+                    <div class="inline">
+                        <label for="dominio">Domínio</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="dominio" id="dominio" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divHospedagemApp">
-                    <label for="hospedagemApp">Hospedagem da Aplicação</label>
+                    <div class="inline">
+                        <label for="hospedagemApp">Hospedagem</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="hospedagemApp" id="hospedagemApp" placeholder="0,00" maxlength="20">
                 </div>
-                <div id="divConstrucaoProjeto">
-                    <label for="construcaoProjeto">Valor da Construção do Projeto</label>
-                    <input type="text" name="construcaoProjeto" id="construcaoProjeto" placeholder="0,00" maxlength="20" readonly>
-                </div>
                 <div id="divCertificadoDigital">
-                    <label for="certificadoDigital">Certificado Digital</label>
+                    <div class="inline">
+                        <label for="certificadoDigital">Certificado</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="certificadoDigital" id="certificadoDigital" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divServidorCache">
-                    <label for="servidorCache">Servidor de Cache</label>
+                    <div class="inline">
+                        <label for="servidorCache">Cache</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="servidorCache" id="servidorCache" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divHospedagemDatabase">
-                    <label for="hospedagemDatabase">Hospedagem de Banco de Dados</label>
+                    <div class="inline">
+                        <label for="hospedagemDatabase">Banco de Dados</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="hospedagemDatabase" id="hospedagemDatabase" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divDesignProjeto">
-                    <label for="designProjeto">Design do Projeto</label>
+                    <div class="inline">
+                        <label for="designProjeto">Design</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="designProjeto" id="designProjeto" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divServidorEmail">
-                    <label for="servidorEmail">Servidor de E-mail</label>
+                    <div class="inline">
+                        <label for="servidorEmail">E-mail</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="servidorEmail" id="servidorEmail" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divSuporte">
-                    <label for="suporte">Suporte</label>
+                    <div class="inline">
+                        <label for="suporte">Suporte</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="suporte" id="suporte" placeholder="0,00" maxlength="20">
                 </div>
                 <div id="divAtualizacoesApp">
-                    <label for="atualizacoesApp">Atualizações na Aplicação</label>
+                    <div class="inline">
+                        <label for="atualizacoesApp">Atualizações</label>
+                        <div class="help_icon">?</div> 
+                    </div>
                     <input type="text" name="atualizacoesApp" id="atualizacoesApp" placeholder="0,00" maxlength="20">
                 </div>
-                <div id="resultadoProjeto">
-                
-                </div>
-                <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button>
+
+                <!-- <button id="calularValorProjeto" type="submit">Calcular Valor do Projeto</button> -->
             </form>
-        </div>
+            <div id="modal" class="hidden_modal">
+                <div class="modal_message">
+                    <div class="hide_modal">
+                        <button>X</button>
+                    </div>
+                    <div class="message">
+                    </div>
+                </div>
+            </div>
     </main>
-    <script type="module" src="./index.js"></script>
-    <script type="module" src="./utils.js"></script>
+    <script type="module" src="public/js/index.js"></script>
+    <script type="module" src="public/js/utils.js"></script>
 </body>
 </html>
