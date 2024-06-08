@@ -196,7 +196,7 @@ form {
 form input {
     width: 100%;
     color: var(--blue);
-    padding: .5rem;
+    padding: .4rem;
     border-radius: .50rem;
     margin: .5rem 0;
     font-size: 1.2rem;

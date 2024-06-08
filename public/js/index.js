@@ -88,47 +88,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
     document.querySelector('#divDominio .help_icon').addEventListener('click', function() {
-        let message = 'Custo para contratação de um domínio (opcional caso o cliente já obtenha).';
+        let message = 'Custo para contratação de um domínio (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
     
     document.querySelector('#divHospedagemApp .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para contratação de seriços de cloud para hospedagem da aplicação (opcional caso o cliente já obtenha).';
+        let message = 'Custo mensal para contratação de serviços de cloud para hospedagem da aplicação (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
 
     document.querySelector('#divCertificadoDigital .help_icon').addEventListener('click', function() {
-        let message = 'Custo para contratação de certificado digital para trafegar os dados de forma encriptada, gerando uma camada maior de segurança na aplicação (opcional caso o cliente já obtenha).';
+        let message = 'Custo para contratação de certificado digital para trafegar os dados de forma encriptada, gerando uma camada maior de segurança na aplicação (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
 
     document.querySelector('#divServidorCache .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para contratação de um servidor de cache para que a aplicação funcione de forma mais performática e gerar uma economia no tráfego de dados (opcional caso o cliente já obtenha).';
+        let message = 'Custo mensal para contratação de um servidor de cache para que a aplicação funcione de forma mais performática e gerar uma economia no tráfego de dados (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
 
     document.querySelector('#divHospedagemDatabase .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para contratação de um servidor de banco de dados (opcional caso o cliente já obtenha).';
+        let message = 'Custo mensal para contratação de um servidor de banco de dados (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
 
     document.querySelector('#divDesignProjeto .help_icon').addEventListener('click', function() {
-        let message = 'Custo para construção do design da aplicação (opcional em caso do cliente já ter o design pronto).';
+        let message = 'Custo para construção do design da aplicação (opcional em caso do cliente já ter o design pronto). O valor é somado no valor total do projeto.';
         showModal(message);
     });
 
     document.querySelector('#divServidorEmail .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para contratação de um servidor para envio de e-mail (opcional caso o cliente já obtenha).';
+        let message = 'Custo mensal para contratação de um servidor para envio de e-mail (opcional caso o cliente já obtenha). O valor é somado no valor total do projeto.';
         showModal(message);
     });
     
     document.querySelector('#divSuporte .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para suporte na aplicação (opcional).';
+        let message = 'Custo mensal para suporte na aplicação (opcional). O cálculo é feito da taxa informada no campo vezes o valor hora, exemplo: taxa = 50,00; valor hora = 16,36; valor do suporte = 818,18. ';
         showModal(message);
     });
 
     document.querySelector('#divAtualizacoesApp .help_icon').addEventListener('click', function() {
-        let message = 'Custo mensal para atualizações na aplicação que podem ser adição de novas funcionalidades, migração de servidor, integrações com APIs de terceiros (opcional).';
+        let message = 'Custo mensal para atualizações na aplicação que podem ser adição de novas funcionalidades, migração de servidor, integrações com APIs de terceiros (opcional). O cálculo é feito da taxa informada no campo vezes o valor hora, exemplo: taxa = 50,00; valor hora = 16,36; valor do suporte = 818,18.';
         showModal(message);
     });
 
