@@ -1,6 +1,9 @@
 export function moneyMask(inputElement) {
     inputElement.addEventListener('input', function(e) {
         let valorMascarado = this.value;
+        if(valorMascarado.trim() === '') {
+            valorMascarado = '0,00';
+        }
         valorMascarado = valorMascarado.replace(/\D/g, "");
         valorMascarado = parseFloat(valorMascarado);
         valorMascarado = String(valorMascarado)
